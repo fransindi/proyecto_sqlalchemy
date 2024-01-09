@@ -8,7 +8,9 @@ from sqlalchemy.orm import sessionmaker
 engine = create_engine('sqlite:///baseDeDatos.sqlite')
 
 # Creamos la sesion que interactua con el motor
-session = sessionmaker(bind=engine)
+Session = sessionmaker(bind=engine)
 
 # Creamos la clase Base la cual hereda las clases del diagramaS
 Base = declarative_base()
+
+session = Session()

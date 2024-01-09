@@ -1,5 +1,5 @@
 import enum
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Enum
 
 from sqlalchemy.orm import relationship
 
@@ -17,5 +17,5 @@ class Album(Base):
     titulo = Column(String)
     anio = Column(Integer)
     descripcion = Column(String)
-    medio = Column(enum(Medio))
+    medio = Column(Enum(Medio))
     canciones = relationship('Cancion', secondary='album-cancion')
